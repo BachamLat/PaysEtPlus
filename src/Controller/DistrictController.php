@@ -5,10 +5,10 @@ namespace App\Controller;
 use App\Entity\District;
 use App\Form\DistrictType;
 use App\Repository\DistrictRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/district")

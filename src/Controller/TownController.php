@@ -5,10 +5,10 @@ namespace App\Controller;
 use App\Entity\Town;
 use App\Form\TownType;
 use App\Repository\TownRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/town")

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  Accueil | World's Country and Others  ! {% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+    <div class="example-wrapper">
+        <h1>  World's Country and Others  </h1>
+
+        {# Recupere the data who concern country #}
+
+        <h3> List of All Country's Code </h3>
+
+        {# <table>
+
+            <tr>
+                <td> Name </td>
+                <td> DialCode </td>
+                <td> Code </td>
+            </tr>
+            
+            <tr>
+                <td> {{ dataCountryCode[1][name] }} </td>
+                <td> {{ dataCountryCode[1][dialCode] }} </td>
+                <td> {{ dataCountryCode[1][code] }} </td>
+            </tr>
+
+        
+        </table> #}
+ 
+        {# End Implementation #}
+
+        <p>
+        </br> </br>
+            Hello World !!  </br>
+            To more know on : 
+            <ul>
+                <li> <a href="{{ path('app_country_index') }}"> Country </a> </li>
+                <li> <a href="{{ path('app_department_index') }}"> Department </a> </li>
+                <li> <a href="{{ path('app_district_index') }}"> District </a> </li>
+                <li> <a href="{{ path('app_municipality_index') }}"> Municipality </a> </li>
+                <li> <a href="{{ path('app_town_index') }}"> Town </a> </li>
+
+            </ul>
+        </p>
+
+    </div>
+
+{% endblock %}
