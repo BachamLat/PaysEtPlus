@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\DistrictRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Town;
+use App\Entity\Municipality;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DistrictRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=DistrictRepository::class)
@@ -25,16 +27,6 @@ class District
     private $name;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $longitude;
-
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $latitude;
-
-    /**
      * @ORM\ManyToOne(targetEntity=Municipality::class, inversedBy="districts")
      */
     private $municipality;
@@ -43,6 +35,16 @@ class District
      * @ORM\OneToMany(targetEntity=Town::class, mappedBy="district")
      */
     private $towns;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $longitude;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $latitude;
 
     public function __construct()
     {
@@ -130,5 +132,10 @@ class District
         }
 
         return $this;
+    }
+    
+    public function __toString()
+    {
+        return $this->name;
     }
 }

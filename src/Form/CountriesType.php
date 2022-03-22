@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\Country;
+use App\Entity\Countries;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CountryType extends AbstractType
+class CountriesType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -23,7 +23,7 @@ class CountryType extends AbstractType
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => Country::class,
+            'data_class' => Countries::class,
         ]);
     }
 }

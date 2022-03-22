@@ -2,8 +2,9 @@
 
 namespace App\Entity;
 
-use App\Repository\TownRepository;
+use App\Entity\District;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\TownRepository;
 
 /**
  * @ORM\Entity(repositoryClass=TownRepository::class)
@@ -23,6 +24,11 @@ class Town
     private $name;
 
     /**
+     * @ORM\ManyToOne(targetEntity=District::class, inversedBy="towns")
+     */
+    private $district;
+
+    /**
      * @ORM\Column(type="float")
      */
     private $longitude;
@@ -32,10 +38,6 @@ class Town
      */
     private $latitude;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=District::class, inversedBy="towns")
-     */
-    private $district;
 
     public function getId(): ?int
     {
@@ -88,5 +90,10 @@ class Town
         $this->district = $district;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

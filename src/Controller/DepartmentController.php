@@ -19,7 +19,7 @@ class DepartmentController extends AbstractController
      * @Route("/", name="app_department_index", methods={"GET"})
      */
     public function index(DepartmentRepository $departmentRepository): Response
-    {
+    { 
         return $this->render('department/index.html.twig', [
             'departments' => $departmentRepository->findAll(),
         ]);
@@ -41,7 +41,7 @@ class DepartmentController extends AbstractController
 
         return $this->renderForm('department/new.html.twig', [
             'department' => $department,
-            'form' => $form,
+            'form' => $form
         ]);
     }
 

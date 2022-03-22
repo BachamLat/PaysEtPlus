@@ -2,15 +2,16 @@
 
 namespace App\Entity;
 
-use App\Repository\CountryRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Department;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CountriesRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
- * @ORM\Entity(repositoryClass=CountryRepository::class)
+ * @ORM\Entity(repositoryClass=CountriesRepository::class)
  */
-class Country
+class Countries
 {
     /**
      * @ORM\Id
@@ -18,11 +19,6 @@ class Country
      * @ORM\Column(type="integer")
      */
     private $id;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $name;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -35,14 +31,9 @@ class Country
     private $dialCode;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $longitude;
-
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $latitude;
+    private $name;
 
     /**
      * @ORM\OneToMany(targetEntity=Department::class, mappedBy="country")
@@ -53,6 +44,16 @@ class Country
     {
         $this->departments = new ArrayCollection();
     }
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $longitude;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $latitude;
 
     public function getId(): ?int
     {
@@ -119,6 +120,11 @@ class Country
         return $this;
     }
 
+    public function __toString()
+    {
+        return $this->name;
+    }
+
     /**
      * @return Collection<int, Department>
      */
@@ -148,4 +154,5 @@ class Country
 
         return $this;
     }
+
 }

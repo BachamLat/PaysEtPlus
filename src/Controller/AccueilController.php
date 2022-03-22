@@ -30,8 +30,8 @@ class AccueilController extends AbstractController
         // $data = file_get_contents($path);
         // $dataOne = file_get_contents($pathOne);
 
-        // $jsonData = json_decode($data,1);
-        // $jsonDataOne = json_decode($dataOne,1);
+        // $jsonData = json_decode($path,1);
+        // $jsonDataOne = json_decode($pathOne,1);
 
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',

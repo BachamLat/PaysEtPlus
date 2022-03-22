@@ -2,10 +2,12 @@
 
 namespace App\Entity;
 
-use App\Repository\DepartmentRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use App\Entity\Countries;
+use App\Entity\Municipality;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DepartmentRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass=DepartmentRepository::class)
@@ -25,17 +27,7 @@ class Department
     private $name;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $longitude;
-
-    /**
-     * @ORM\Column(type="float", nullable=true)
-     */
-    private $latitude;
-
-    /**
-     * @ORM\ManyToOne(targetEntity=Country::class, inversedBy="departments")
+     * @ORM\ManyToOne(targetEntity=Countries::class, inversedBy="departments")
      */
     private $country;
 
@@ -47,6 +39,21 @@ class Department
     public function __construct()
     {
         $this->municipalities = new ArrayCollection();
+    }
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $longitude;
+
+    /**
+     * @ORM\Column(type="float", nullable=true)
+     */
+    private $latitude;
+
+    public function __toString()
+    {
+        return $this->name;
     }
 
     public function getId(): ?int
@@ -90,12 +97,12 @@ class Department
         return $this;
     }
 
-    public function getCountry(): ?Country
+    public function getCountry(): ?Countries
     {
         return $this->country;
     }
 
-    public function setCountry(?Country $country): self
+    public function setCountry(?Countries $country): self
     {
         $this->country = $country;
 
@@ -131,4 +138,5 @@ class Department
 
         return $this;
     }
+    
 }
