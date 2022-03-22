@@ -17,15 +17,10 @@ class AccueilController extends AbstractController
     public function index(): Response
     {
         // $package = new EmptyVersionStrategy();
-
         // $package = new Package(new StaticVersionStrategy('v1'));
 
         // $path = $package->getUrl('assets/json/CountryCode.json');
-
-        // // $path = $package->getUrl('assets/json/CountryCode.json');
-        // // $path = './CountryCode.json';
         // $pathOne =  $package->getUrl('assets/json/BeninTerritorial.json') ;
-        // // $pathOne = './BeninTerritorial.json' ;
 
         // $data = file_get_contents($path);
         // $dataOne = file_get_contents($pathOne);
@@ -35,8 +30,7 @@ class AccueilController extends AbstractController
 
         return $this->render('accueil/index.html.twig', [
             'controller_name' => 'AccueilController',
-            // 'dataCountryCode' => $jsonData,
-            // 'dataBeninTerritorial' => $jsonDataOne,
+            
         ]);
     }
 }
