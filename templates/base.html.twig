@@ -22,7 +22,31 @@
                     font:inherit;
                     color:inherit
                 }
-            </style>
+           
+                ul li a, ul li a:visited {
+                    color: #709f50 !important;
+                }
+
+                ul li a:hover, ul li a:active {
+                    color: #23dd13 !important;
+                }
+
+                ul li.active a {
+                    color: blue !important;
+                }
+
+                a:visited {
+                color: #709f50 !important;
+                }
+
+                a:hover, a:active {
+                        color: #23dd13 !important;
+                }
+
+                a {
+                        color: blue !important;
+                }
+    </style>
             {# {{ encore_entry_script_tags('app') }} #}
         {% endblock %} 
     </head>
