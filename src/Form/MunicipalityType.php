@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class MunicipalityType extends AbstractType
 {
@@ -20,13 +20,13 @@ class MunicipalityType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('longitude', IntegerType::class, [
+            ->add('longitude', NumberType::class, [
                 'label' => 'Longitude',
                 'attr'=> [
                     'class' => 'form-control'
                 ]
             ])
-            ->add('latitude', IntegerType::class, [
+            ->add('latitude', NumberType::class, [
                 'label'=> 'Latitude',
                 'attr'=> [
                     'class' => 'form-control'
