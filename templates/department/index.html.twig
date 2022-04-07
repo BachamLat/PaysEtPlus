@@ -22,9 +22,9 @@
                 <td>{{ department.name }}</td>
                 <td>{{ department.longitude }}</td>
                 <td>{{ department.latitude }}</td>
-                <td>
-                    <a href="{{ path('app_department_show', {'id': department.id}) }}">show</a>
-                    <a href="{{ path('app_department_edit', {'id': department.id}) }}">edit</a>
+                <td>                                    
+                    <a href="{{ path('app_department_show', {'id': department.id}) }}"><i class="far fa-eye">  </i>show</a>
+                    <a href="{{ path('app_department_edit', {'id': department.id}) }}"><i class="far fa-edit">  </i> edit</a>
                 </td>
             </tr>
         {% else %}
@@ -34,6 +34,30 @@
         {% endfor %}
         </tbody>
     </table>
+
+
+    {% if maxPages > 1 %}
+       <div class="center">
+           <ul class="pagination pagination-sm">
+            {# `«` arrow  #}
+            <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                <a href="{{ path('app_department_index', {currentPage: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
+            </li>
+
+            {# Render each page number #}
+            {% for i in 1..maxPages %}
+            <li {{ thisPage == i ? 'class="active"' }}>
+            <a href="{{ path('app_department_index', {currentPage: i}) }}">{{ i }}</a>
+            </li>
+            {% endfor %}
+
+            {# `»` arrow #}
+            <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                <a href="{{ path('app_department_index', {currentPage: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>
+            </li>
+        </ul>
+       </div>
+    {% endif %}
 
     <a href="{{ path('app_department_new') }}">Create new</a> </br> </br>
 

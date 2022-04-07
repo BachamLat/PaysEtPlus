@@ -10,18 +10,37 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
 /**
  * @Route("/countries")
  */
 class CountriesController extends AbstractController
 {
+
     /**
      * @Route("/", name="app_countries_index", methods={"GET"})
      */
-    public function index(CountriesRepository $countriesRepository): Response
+    public function index(Request $request, CountriesRepository $countriesRepository): Response
     {
+  
+        $currentPage=1;
+        if(array_key_exists("currentPage",$_GET)){
+            $currentPage=intVal($_GET["currentPage"]);
+        }
+        $thisPage = $currentPage;
+        $limit = 25;
+        $paginator= $countriesRepository->getAllCountries($currentPage,$limit);
+
+       
+        $maxPages = ceil($paginator->count() / $limit);
+
         return $this->render('countries/index.html.twig', [
             'countries' => $countriesRepository->findAll(),
+            'countries' => $paginator,
+            'thisPage' => $thisPage,
+            'maxPages' => $maxPages,
+            'currentPage' => $currentPage ,
+            
         ]);
     }
 

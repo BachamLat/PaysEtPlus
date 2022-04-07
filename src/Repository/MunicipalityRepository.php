@@ -6,6 +6,7 @@ use App\Entity\Municipality;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
@@ -45,6 +46,27 @@ class MunicipalityRepository extends ServiceEntityRepository
         }
     }
 
+
+    public function getAllMunicipalities($currentPage,$limit): Paginator
+    {
+        $query =$this->createQueryBuilder('p')
+            ->getQuery();
+        $paginator=$this->paginate($query,$currentPage,$limit);
+        return $paginator;
+    }
+    
+    public function paginate($dql, $page, $limit)
+    {
+        $paginator = new Paginator($dql);
+
+        $paginator->getQuery()
+            ->setFirstResult($limit * ($page - 1)) // Offset
+            ->setMaxResults($limit); // Limit
+
+        return $paginator;
+    }
+
+    
     // /**
     //  * @return Municipality[] Returns an array of Municipality objects
     //  */

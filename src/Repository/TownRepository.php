@@ -6,6 +6,7 @@ use App\Entity\Town;
 use Doctrine\ORM\ORMException;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
@@ -44,6 +45,27 @@ class TownRepository extends ServiceEntityRepository
             $this->_em->flush();
         }
     }
+
+
+    public function getAllTowns($currentPage,$limit): Paginator
+    {
+        $query =$this->createQueryBuilder('p')
+            ->getQuery();
+        $paginator=$this->paginate($query,$currentPage,$limit);
+        return $paginator;
+    }
+    
+    public function paginate($dql, $page, $limit)
+    {
+        $paginator = new Paginator($dql);
+
+        $paginator->getQuery()
+            ->setFirstResult($limit * ($page - 1)) // Offset
+            ->setMaxResults($limit); // Limit
+
+        return $paginator;
+    }
+
 
     // /**
     //  * @return Town[] Returns an array of Town objects

@@ -3,42 +3,45 @@
 {% block title %}Countries{% endblock %}
 
 {% block body %}
+
+                <h1>Countries</h1>
+
+                <table class=" table table-striped table-hover" >
+                    <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ countries.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ countries.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Code</th>
+                            <td>{{ countries.code }}</td>
+                        </tr>
+                        <tr>
+                            <th>DialCode</th>
+                            <td>{{ countries.dialCode }}</td>
+                        </tr>
+                        <tr>
+                            <th>Longitude</th>
+                            <td>{{ countries.longitude }}</td>
+                        </tr>
+                        <tr>
+                            <th>Latitude</th>
+                            <td>{{ countries.latitude }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            {# Link for to return at homepage or modify the object #}
+
+            <a href="{{ path('app_countries_index') }}">back to list</a>
+
+            <a href="{{ path('app_countries_edit', {'id': countries.id}) }}">edit</a>
+
+            {{ include('countries/_delete_form.html.twig') }}
         
-        <h1>Countries</h1>
-
-        <table class="table table-striped table-hover" >
-            <tbody>
-                <tr>
-                    <th>Id</th>
-                    <td>{{ countries.id }}</td>
-                </tr>
-                <tr>
-                    <th>Name</th>
-                    <td>{{ countries.name }}</td>
-                </tr>
-                <tr>
-                    <th>Code</th>
-                    <td>{{ countries.code }}</td>
-                </tr>
-                <tr>
-                    <th>DialCode</th>
-                    <td>{{ countries.dialCode }}</td>
-                </tr>
-                <tr>
-                    <th>Longitude</th>
-                    <td>{{ countries.longitude }}</td>
-                </tr>
-                <tr>
-                    <th>Latitude</th>
-                    <td>{{ countries.latitude }}</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <a href="{{ path('app_countries_index') }}">back to list</a>
-
-        <a href="{{ path('app_countries_edit', {'id': countries.id}) }}">edit</a>
-
-        {{ include('countries/_delete_form.html.twig') }}
         
 {% endblock %}

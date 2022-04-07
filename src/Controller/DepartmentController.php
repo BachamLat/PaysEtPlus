@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/department")
+ * @Route("/departments")
  */
 class DepartmentController extends AbstractController
 {
@@ -20,9 +20,27 @@ class DepartmentController extends AbstractController
      */
     public function index(DepartmentRepository $departmentRepository): Response
     { 
+
+        $currentPage=1;
+        if(array_key_exists("currentPage",$_GET)){
+            $currentPage=intVal($_GET["currentPage"]);
+        }
+        $thisPage = $currentPage;
+        $limit = 25;
+        $paginator= $departmentRepository->getAllDepartments($currentPage,$limit);
+
+       
+        $maxPages = ceil($paginator->count() / $limit);
+
         return $this->render('department/index.html.twig', [
             'departments' => $departmentRepository->findAll(),
+            'departments' => $paginator,
+            'thisPage' => $thisPage,
+            'maxPages' => $maxPages,
+            'currentPage' => $currentPage ,
+            
         ]);
+
     }
 
     /**

@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/town")
+ * @Route("/towns")
  */
 class TownController extends AbstractController
 {
@@ -20,9 +20,26 @@ class TownController extends AbstractController
      */
     public function index(TownRepository $townRepository): Response
     {
+
+        $currentPage=1;
+        if(array_key_exists("currentPage",$_GET)){
+            $currentPage=intVal($_GET["currentPage"]);
+        }
+        $thisPage = $currentPage;
+        $limit = 100;
+        $paginator= $townRepository->getAllTowns($currentPage,$limit);
+       
+        $maxPages = ceil($paginator->count() / $limit);
+
         return $this->render('town/index.html.twig', [
             'towns' => $townRepository->findAll(),
+            'towns' => $paginator,
+            'thisPage' => $thisPage,
+            'maxPages' => $maxPages,
+            'currentPage' => $currentPage ,
+            
         ]);
+      
     }
 
     /**

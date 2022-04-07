@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/district")
+ * @Route("/districts")
  */
 class DistrictController extends AbstractController
 {
@@ -20,9 +20,27 @@ class DistrictController extends AbstractController
      */
     public function index(DistrictRepository $districtRepository): Response
     {
+
+        $currentPage=1;
+        if(array_key_exists("currentPage",$_GET)){
+            $currentPage=intVal($_GET["currentPage"]);
+        }
+        $thisPage = $currentPage;
+        $limit = 25;
+        $paginator= $districtRepository->getAllDistricts($currentPage,$limit);
+
+       
+        $maxPages = ceil($paginator->count() / $limit);
+
         return $this->render('district/index.html.twig', [
             'districts' => $districtRepository->findAll(),
+            'districts' => $paginator,
+            'thisPage' => $thisPage,
+            'maxPages' => $maxPages,
+            'currentPage' => $currentPage ,
+            
         ]);
+       
     }
 
     /**

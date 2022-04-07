@@ -11,7 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/municipality")
+ * @Route("/municipalities")
  */
 class MunicipalityController extends AbstractController
 {
@@ -20,9 +20,27 @@ class MunicipalityController extends AbstractController
      */
     public function index(MunicipalityRepository $municipalityRepository): Response
     {
+        
+        $currentPage=1;
+        if(array_key_exists("currentPage",$_GET)){
+            $currentPage=intVal($_GET["currentPage"]);
+        }
+        $thisPage = $currentPage;
+        $limit = 25;
+        $paginator= $municipalityRepository->getAllMunicipalities($currentPage,$limit);
+
+       
+        $maxPages = ceil($paginator->count() / $limit);
+
         return $this->render('municipality/index.html.twig', [
             'municipalities' => $municipalityRepository->findAll(),
+            'municipalities' => $paginator,
+            'thisPage' => $thisPage,
+            'maxPages' => $maxPages,
+            'currentPage' => $currentPage ,
+            
         ]);
+    
     }
 
     /**
