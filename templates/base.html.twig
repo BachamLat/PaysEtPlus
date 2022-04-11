@@ -4,20 +4,16 @@
         <meta charset="UTF-8">
         <title>{% block title %} Welcome ! {% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}
-            
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
-            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css" integrity="sha384-ejwKkLla8gPP8t2u0eQyL0Q/4ItcnyveF505U0NIobD/SMsNyXrLti6CWaD0L52l" crossorigin="anonymous">
-            
-        {% endblock %}
+                    
+        {# <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"> #}
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
         
-        {% block javascripts %}
-            <!-- JavaScript Bundle with Popper -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-            {# <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> #}
-            
-            <style>
+        <style>
                 button, input, optgroup, select, textarea {
                     margin:09px;
                     font:inherit;
@@ -47,15 +43,46 @@
                 a {
                         color: blue !important;
                 }
+
+                table tbody a i {
+                    padding-left : 8px;
+                }
+                .container {
+                    margin-top: 2px;
+                }
+                .container nav{
+                   
+                    border: 1px solid #09890 ;
+                    border-radius: 9px;
+                }
                 
-      </style> 
-    </style>
-            {# {{ encore_entry_script_tags('app') }} #}
-        {% endblock %} 
+            </style> 
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        {% block stylesheets %}  {% endblock %}
+         
     </head>
     <body>
         <div class="container"> 
+
+            <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-3">
+                <div class="container">
+                    <a href="{{ path('app_accueil') }}" class="navbar-brand"> Locate One's Countries or towns  </a>
+                </div>
+            </nav>
+
+            {{ include('nav_bar/navbar.html.twig') }}
+
             {% block body %}{% endblock %} 
+
+
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+
+            {% block javascripts %}
+            <!-- JavaScript Bundle with Popper -->
+            
+            {# {{ encore_entry_script_tags('app') }} #}
+            {% endblock %}
         </div>
     </body>
 </html>

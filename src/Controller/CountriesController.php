@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Countries;
 use App\Form\CountriesType;
 use App\Repository\CountriesRepository;
+use App\Repository\DepartmentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -67,8 +68,18 @@ class CountriesController extends AbstractController
     /**
      * @Route("/{id}", name="app_countries_show", methods={"GET"})
      */
-    public function show(Countries $countries): Response
+    public function show($id, Countries $countries,DepartmentRepository $departmentRepository): Response
     {
+        // show departments link at Countries
+        
+        // $lesservices = $this->getDoctrine()->$departmentRepository->findAll();
+        // $em = $this->getdoctrine()->getManager();
+        // $query = $em->createQuery('SELECT distinct name.department FROM App\Entity\Department WHERE country_id == $id');
+        // $services = $query->getResult();
+        
+        // $departments = $countriesRepository->findAll( ['groups' => 'varVisible'] );
+        // dd($departments);
+
         return $this->render('countries/show.html.twig', [
             'countries' => $countries,
         ]);

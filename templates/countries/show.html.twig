@@ -4,16 +4,16 @@
 
 {% block body %}
 
-                <h1>Countries</h1>
+                <h1> <small> Countries </small> </h1>
 
-                <table class=" table table-striped table-hover" >
+                <table class="table table-striped table-hover" >   
                     <tbody>
                         <tr>
                             <th>Id</th>
                             <td>{{ countries.id }}</td>
                         </tr>
                         <tr>
-                            <th>Name</th>
+                        <th>Name</th>
                             <td>{{ countries.name }}</td>
                         </tr>
                         <tr>
@@ -24,22 +24,26 @@
                             <th>DialCode</th>
                             <td>{{ countries.dialCode }}</td>
                         </tr>
+
+                        <tr>  <td colspan="2"> </td>  </tr>
+
                         <tr>
                             <th>Longitude</th>
-                            <td>{{ countries.longitude }}</td>
+                            <th>Latitude</th>
                         </tr>
                         <tr>
-                            <th>Latitude</th>
+                            <td>{{ countries.longitude }}</td>
                             <td>{{ countries.latitude }}</td>
-                        </tr>
+                        </tr>                 
                     </tbody>
+                   
                 </table>
 
             {# Link for to return at homepage or modify the object #}
+        
+            <a class="btn btn-default" href="{{ path('app_countries_index') }}" role="button"> Retour </a>
 
-            <a href="{{ path('app_countries_index') }}">back to list</a>
-
-            <a href="{{ path('app_countries_edit', {'id': countries.id}) }}">edit</a>
+            <a class="btn btn-default" href="{{ path('app_countries_edit', {'id': countries.id}) }}" role="button"> Edit </a>
 
             {{ include('countries/_delete_form.html.twig') }}
         

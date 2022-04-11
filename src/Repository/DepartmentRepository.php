@@ -67,6 +67,26 @@ class DepartmentRepository extends ServiceEntityRepository
     }
 
 
+    // function insered for to handle get department in function of countries
+    //can be deleted
+     /**
+     * @return Department[]
+     */
+    public function findAllGreaterThanId(int $id): array
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT * 
+            FROM department
+            WHERE country_id = id'
+        );
+
+        // returns an array of Country objects
+        return $query->getResult();
+    }
+
+
     // /**
     //  * @return Department[] Returns an array of Department objects
     //  */
