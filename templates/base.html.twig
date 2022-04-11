@@ -17,31 +17,31 @@
                 button, input, optgroup, select, textarea {
                     margin:09px;
                     font:inherit;
-                    color:inherit
+                    color:inherit;
                 }
            
-                ul li a, ul li a:visited {
-                    color: #709f50 !important;
+                ul li a, ul li a:visited { 
+                    color: #709f50 !important; /* vert pur*/
                 }
 
                 ul li a:hover, ul li a:active {
-                    color: #23dd13 !important;
+                    color: #23dd13 !important;   /* vert doree */
                 }
 
                 ul li.active a {
-                    color: blue !important;
+                    color: #23dd13 !important; /* blue before */
                 }
 
                 a:visited {
-                color: #709f50 !important;
+                    color: #709f50 !important;
                 }
 
                 a:hover, a:active {
-                        color: #23dd13 !important;
+                    color: #23dd13 !important;
                 }
 
                 a {
-                        color: blue !important;
+                    color: #709f50 !important; /* blue before */
                 }
 
                 table tbody a i {
@@ -51,9 +51,25 @@
                     margin-top: 2px;
                 }
                 .container nav{
-                   
                     border: 1px solid #09890 ;
                     border-radius: 9px;
+                }
+                
+                #deleteBtn button{
+                    color: #709f50 !important;
+                }
+                #deleteBtn button:hover{
+                    color: #23dd13 !important
+                }
+                #deleteBtn{
+                    padding-bottom: 2px ;
+                }
+
+                /* Backgroun applick au head du tableau */
+                .tagged_Title table thead{
+
+                    background-color: #bbff00; 
+
                 }
                 
             </style> 
@@ -66,7 +82,7 @@
 
             <nav class="navbar navbar-expand-sm navbar-dark bg-info mb-3">
                 <div class="container">
-                    <a href="{{ path('app_accueil') }}" class="navbar-brand"> Locate One's Countries or towns  </a>
+                    <a href="{{ path('app_accueil') }}" class="navbar-brand"> Bienvenue à la Plate-forme de localisation des cités du Bénin  </a>
                 </div>
             </nav>
 

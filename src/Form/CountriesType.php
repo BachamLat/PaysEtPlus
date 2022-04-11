@@ -15,7 +15,7 @@ class CountriesType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'label'=> 'Name',
+                'label'=> 'Nom',
                 'attr'=> [
                     'class' => 'form-control'
                 ]
@@ -27,7 +27,7 @@ class CountriesType extends AbstractType
                 ]
             ])
             ->add('dialCode', TextType::class, [
-                'label'=> 'DialCode',
+                'label'=> 'Code de numérotation',
                 'attr'=> [
                     'class' => 'form-control'
                 ]

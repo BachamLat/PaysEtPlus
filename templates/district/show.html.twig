@@ -3,16 +3,16 @@
 {% block title %}District{% endblock %}
 
 {% block body %}
-    <h1> <small> District </small> </h1>
+    <h1> <small> Quartier </small> </h1>
 
     <table class="table table-striped table-hover">
         <tbody>
-            <tr>
+            {# <tr>
                 <th>Id</th>
                 <td>{{ district.id }}</td>
-            </tr>
+            </tr> #}
             <tr>
-                <th>Name</th>
+                <th>Nom</th>
                 <td>{{ district.name }}</td>
             </tr>
 
@@ -29,10 +29,18 @@
         </tbody>
     </table>
 
-    <a class="btn btn-default" href="{{ path('app_district_index') }}" role="button"> Retour </a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="pull-left">
+                    <a class="btn btn-default" href="{{ path('app_district_edit', {'id': district.id}) }}" role="button"> Editer </a> 
+                </div>
 
-    <a class="btn btn-default" href="{{ path('app_district_edit', {'id': district.id}) }}" role="button"> Edit</a>
+                <div class="pull-right">
+                    <a class="btn btn-default" href="{{ path('app_district_index') }}" role="button"> Retour à la liste </a>         
+                </div>
 
-    {{ include('district/_delete_form.html.twig') }}
+                {{ include('district/_delete_form.html.twig') }}
+            </div>
+        </div>
 
 {% endblock %}

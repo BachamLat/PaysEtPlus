@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New District{% endblock %}
+{% block title %}Nouveau Quartier{% endblock %}
 
 {% block body %}
-    <h1>Create new District</h1>
+    <h1>Enregistrer un Quartier </h1>
 
     {{ include('district/_form.html.twig') }}
 
-    <a href="{{ path('app_district_index') }}">back to list</a>
+    <div class="pull-right">
+        <a class="btn btn-default" href="{{ path('app_district_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
+    </div>
 {% endblock %}

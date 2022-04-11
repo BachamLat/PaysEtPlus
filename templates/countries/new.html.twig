@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}New Countries{% endblock %}
+{% block title %}Nouveau Pays{% endblock %}
 
 {% block body %}
 
-         <h1>Create new Countries</h1>
+        <h1>Enregistrer un nouveau Pays</h1>
 
         {{ include('countries/_form.html.twig') }}
 
-        <a href="{{ path('app_countries_index') }}">back to list</a>
+        <div class="pull-right">
+                <a class="btn btn-default" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
+        </div>
 
 {% endblock %}
