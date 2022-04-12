@@ -2,6 +2,14 @@
 
 {% block title %}Departments{% endblock %}
 
+{% block stylesheets %}
+    <style>
+        .container-fluid .row div{
+            color : white ;
+        }
+    </style>
+{% endblock %}
+
 {% block body %}
     <h1> <small> Liste des Departements </small></h1>
 
@@ -67,7 +75,7 @@
                 <a class="btn btn-default" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
                 <a class="btn btn-success" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
                 <a class="btn btn-primary" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
-                <a class="btn btn-light" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
+                <a class="btn btn-brand-info" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
                 <a class="btn btn-secondary" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
                 <a class="btn btn-info" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
             </div>
