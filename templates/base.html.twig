@@ -44,24 +44,34 @@
                     color: #709f50 !important; /* blue before */
                 }
 
+                .row a:visited {
+                    color: white !important;
+                }
+
+                .row a:hover, .row a:active, #deleteBtn a {
+                    color: white !important; /* rgb(140,212,118) */
+                }
+
+                .row a {
+                    color: white !important; /* blue before */
+                }
+
+                #btnPosition{
+                    text-align: center;
+                }
+
                 table tbody a i {
                     padding-left : 8px;
                 }
                 .container {
                     margin-top: 2px;
                 }
-                .container nav{
+                .container nav {
                     border: 1px solid #09890 ;
-                    border-radius: 9px;
+                    /* border-radius: 9px; */
                 }
-                
-                #deleteBtn button{
-                    color: #709f50 !important;
-                }
-                #deleteBtn button:hover{
-                    color: #23dd13 !important
-                }
-                #deleteBtn{
+            
+                #deleteBtn {
                     padding-bottom: 2px ;
                 }
 
@@ -72,7 +82,7 @@
                                            
             </style> 
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
-        {% block stylesheets %}  {% endblock %}
+        {% block stylesheets %} {% endblock %}
          
     </head>
     <body>

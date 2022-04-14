@@ -8,9 +8,9 @@
         <h1>Enregistrer un nouveau Pays</h1>
 
         {{ include('countries/_form.html.twig') }}
-
-        <div class="pull-right">
-                <a class="btn btn-default" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
+        
+        <div id="deleteBtn" class="pull-right">
+                <a class="btn btn-info" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
         </div>
 
 {% endblock %}

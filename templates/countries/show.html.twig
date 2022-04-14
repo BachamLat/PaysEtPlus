@@ -44,11 +44,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="pull-left">
-                    <a class="btn btn-default" href="{{ path('app_countries_edit', {'id': countries.id}) }}" role="button"> Editer </a> 
+                    <a class="btn btn-info" href="{{ path('app_countries_edit', {'id': countries.id}) }}" role="button"> Editer </a> 
                 </div>
 
                 <div class="pull-right">
-                    <a class="btn btn-default" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>         
+                    <a class="btn btn-info" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>         
                 </div>
 
                 {{ include('countries/_delete_form.html.twig') }}

@@ -7,9 +7,9 @@
 
     {{ include('district/_form.html.twig', {'button_label': 'Metre à jour'}) }}
     
-        <div class="container-fluid">
+        <div id="deleteBtn" class="container-fluid">
                 <div class="pull-right">
-                        <a class="btn btn-default" href="{{ path('app_district_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
+                        <a class="btn btn-info" href="{{ path('app_district_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
                 </div>
                 
                 {{ include('district/_delete_form.html.twig') }}              
