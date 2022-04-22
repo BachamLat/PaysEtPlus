@@ -1,9 +1,34 @@
+<nav class="navbar navbar-light navbar-expand-lg page-navbar" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+        <div class="container">
+           
+                <a class="navbar-brand" href="{{ path('app_accueil') }}">Les Cites du BENIN </a>
+            
+            <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-<ul class="nav nav-tabs">
-    <li role="presentation" class="nav-item" > <a href="{{ path('app_accueil') }}" class="nav-link">Accueil</a> </li>
-    <li role="presentation" class="nav-item"> <a href="{{ path('app_countries_index') }}" class="nav-link"> Pays </a> </li>
-    <li role="presentation" class="nav-item"> <a href="{{ path('app_department_index') }}" class="nav-link"> Départements </a> </li>
-    <li role="presentation" class="nav-item"> <a href="{{ path('app_district_index') }}" class="nav-link"> Quartiers </a> </li>
-    <li role="presentation" class="nav-item"> <a href="{{ path('app_municipality_index') }}" class="nav-link"> Municipalités </a> </li>
-    <li role="presentation" class="nav-item"> <a href="{{ path('app_town_index') }}" class="nav-link"> Villes </a> </li>
-</ul>
+            <div class="collapse navbar-collapse text-left"
+                data-aos="fade" data-aos-delay="250" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item item" role="presentation" data-bs-hover-animate="pulse"><a class="nav-link active" href="{{ path('app_accueil') }}">Accueil</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle nav-link active" data-toggle="dropdown" aria-expanded="false" data-bs-hover-animate="pulse" href="#" style="margin-right: 18px;">Location&nbsp;</a>
+                        
+                        <div class="dropdown-menu" role="menu" style="background-color: rgb(218,218,218);">
+                            <a class="dropdown-item" role="presentation" href="{{ path('app_countries_index') }}">Pays</a>
+                            <a class="dropdown-item" role="presentation" href="{{ path('app_department_index') }}">Departements</a>
+                            <a class="dropdown-item" role="presentation" href="{{ path('app_municipality_index') }}">Municipalites</a>
+                            <a class="dropdown-item" role="presentation" href="{{ path('app_district_index') }}">Quartiers</a>
+                            <a class="dropdown-item" role="presentation" href="{{ path('app_town_index') }}">Villes</a>
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item item" role="presentation" data-bs-hover-animate="pulse">
+                        <a class="nav-link active" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>

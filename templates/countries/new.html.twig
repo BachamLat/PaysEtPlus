@@ -9,8 +9,10 @@
 
         {{ include('countries/_form.html.twig') }}
         
-        <div id="deleteBtn" class="pull-right">
-                <a class="btn btn-info" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
+        <div class="container-fluid">
+                <div class="pull-right">
+                        <a class="btn btn-info" href="{{ path('app_countries_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
+                </div>
         </div>
 
 {% endblock %}

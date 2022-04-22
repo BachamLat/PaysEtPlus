@@ -1,11 +1,13 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-     <div class="form-inline">
 
-        <div id="deleteBtn" class="pull-left">
+        <div class="container"> 
+            {{ form_widget(form) }}
+        </div>
+
+        <div class="pull-left">
             <a class="btn btn-info"  role="button">  {{ button_label|default('Enregistrer') }} </a>  <br> <br>    
         </div>
-    </div>
+    
 
     {# <button class="btn">{{ button_label|default('Save') }}</button> #}
 {{ form_end(form) }}

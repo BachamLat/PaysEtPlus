@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}  Home | World's Countries and Others Google-maps  ! {% endblock %}
+
+
+
+ {% block stylesheets %}
+      <link rel="stylesheet" type="text/css" href="{{ asset('css/css/map-init.css') }}" />  
+ {% endblock %}
+    
+    
+ {% block javascripts %} 
+    <script src="{{ asset('css/js/map-init.js') }}"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+   
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDvZG_hgq8O6mG907kgX9KiDW9PBaepCk&callback=initMap">
+    </script>
+    <!--mapapplication-348010 -->
+ {% endblock %}
+
+
+{% block body %}
+
+   {# nav bar exit #}
+
+        <div class="container">
+            <div id="map"> </div>
+        </div>
+
+    
+        <div class="map-example">
+            <div class="row">
+                <div class="col-lg-6">
+
+                    <iframe allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4031868.145061158!2d0.06427089577774357!3d9.300336022050939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023542b047a5695%3A0xecb277f8cb622ef5!2zQsOpbmlu!5e0!3m2!1sfr!2sbj!4v1650387607978!5m2!1sfr!2sbj" data-aos="fade-left" data-aos-delay="300" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                   
+                    
+                </div>
+                
+                <div class="col-lg-6" data-aos="fade-right" data-aos-delay="300">
+                    <div class="heading">
+                        <h3>Bienvenue sur la Plate-forme de localisation des cités du BENIN<br></h3>
+                    </div>
+                    <div data-bs-hover-animate="pulse" class="info">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ornare leo porta cursus porttitor. Proin quis tempor lectus. Cras sodales nisi ut felis tincidunt suscipit. Nullam consectetur odio et lacus tempor vestibulum.</p>
+                        <p>Aenean convallis, tortor eget vehicula vestibulum, sem nibh rutrum sem, vel sodales nisl velit eu ex. Sed hendrerit efficitur sollicitudin. Maecenas tempus augue lacus.</p>
+                    </div>
+                    <div class="gallery">
+                        <h4>Photos</h4>
+                        <div class="row">
+                            <div class="col-md-4"><a href="css/img/image2.webp"><img class="img-fluid image" data-bs-hover-animate="pulse" src="css/img/image2.webp"></a></div>
+                            <div class="col-md-4"><a href="css/img/image3.webp"><img class="img-fluid image" data-bs-hover-animate="pulse" src="css/img/image3.webp"></a></div>
+                            <div class="col-md-4"><a href="css/img/image4.webp"><img class="img-fluid image" data-bs-hover-animate="pulse" src="css/img/image4.webp"></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    
+    {#     
+        <div class="header-dark">
+            <div class="container hero">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <h1 class="text-center">The Revolution is Here.</h1>
+                        <div class="embed-responsive embed-responsive-16by9"><iframe class="embed-responsive-item"></iframe></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   #}
+    <!--  Contacter l'entreprise  -->
+
+    
+        <div data-aos="fade-left" data-aos-delay="150" class="contact-clean">
+            <form data-aos="fade-right" data-aos-delay="200" method="post">
+                <h2 class="text-center">Contacter Nous</h2>
+                <div class="form-group">
+                    <input class="form-control" type="text" placeholder="Name" name="name" style="background-color: rgb(241,247,252);">
+                </div>
+                <div class="form-group">
+                    <input class="form-control is-invalid" type="email" placeholder="Email" name="email" style="background-color: rgb(241,247,252);"><small class="form-text text-danger">Entrer une correcte adresse mail</small>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Message" rows="14" name="message"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    
+
+{% endblock %}

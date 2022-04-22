@@ -29,8 +29,10 @@
         </tbody>
     </table>
 
-        <div class="container-fluid">
-            <div class="row">
+    
+
+    <div class="container-fluid">
+
                 <div class="pull-left">
                     <a class="btn btn-info" href="{{ path('app_municipality_edit', {'id': municipality.id}) }}" role="button"> Editer </a> 
                 </div>
@@ -38,9 +40,12 @@
                 <div class="pull-right">
                     <a class="btn btn-info" href="{{ path('app_municipality_index') }}" role="button"> Retour à la liste </a>         
                 </div>
+        
+               {{ include('municipality/_delete_form.html.twig') }}
 
-                {{ include('municipality/_delete_form.html.twig') }}
-            </div>
-        </div>
+    </div>
+
+    
+
 
 {% endblock %}

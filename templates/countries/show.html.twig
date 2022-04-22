@@ -42,7 +42,7 @@
             {# Link for to return at homepage or modify the object #}
         
         <div class="container-fluid">
-            <div class="row">
+
                 <div class="pull-left">
                     <a class="btn btn-info" href="{{ path('app_countries_edit', {'id': countries.id}) }}" role="button"> Editer </a> 
                 </div>
@@ -52,7 +52,7 @@
                 </div>
 
                 {{ include('countries/_delete_form.html.twig') }}
-            </div>
+
         </div>
 
            

@@ -2,13 +2,6 @@
 
 {% block title %}Departments{% endblock %}
 
-{% block stylesheets %}
-    <style>
-        .container-fluid .row div{
-            color : white ;
-        }
-    </style>
-{% endblock %}
 
 {% block body %}
     <h1> <small> Liste des Departements </small></h1>
@@ -70,7 +63,7 @@
     {% endif %}
 
     <div class="container-fluid">
-        <div class="row">
+        
             <div class="pull-left">
                <a class="btn btn-info" href="{{ path('app_department_new') }}" role="button"> Nouveau Departement </a> 
             </div>
@@ -78,7 +71,7 @@
             <div class="pull-right">
                 <a class="btn btn-info" href="{{ path('app_accueil') }}" role="button"> Retour </a>     <br> <br>    
             </div>
-        </div>
+       
     </div>
 
 {% endblock %}

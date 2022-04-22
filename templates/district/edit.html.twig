@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Editer Quartier{% endblock %}
+{% block title %}Editer Arrondissement{% endblock %}
 
 {% block body %}
-    <h1> <small> Mettre à jour un Quartier </small> </h1>
+    <h1> <small> Mettre à jour un Arrondissement </small> </h1>
 
-    {{ include('district/_form.html.twig', {'button_label': 'Metre à jour'}) }}
+        {{ include('district/_form.html.twig', {'button_label': 'Metre à jour'}) }}
     
-        <div id="deleteBtn" class="container-fluid">
+        <div class="container-fluid">
                 <div class="pull-right">
                         <a class="btn btn-info" href="{{ path('app_district_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
                 </div>
