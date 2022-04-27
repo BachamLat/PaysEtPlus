@@ -1,19 +1,45 @@
-// Initialize and add the map
-function initMap() {
-    // The location of Uluru
-    // const uluru = { lat: -25.344, lng: 131.031 };
-    const uluru = { lat: 9.3220475, lng: 2.313138 };
 
-    // The map, centered at Uluru
+
+    function initMap() {
+    // const uluru = { lat: 9.3220475, lng: 2.313138 };
+
+    const myLatLng = { lat: 9.3220475, lng:  2.313138};
     const map = new google.maps.Map(document.getElementById("map"), {
       zoom: 4,
-      center: uluru,
+      center: myLatLng,  
     });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-      position: uluru,
-      map: map,
+  
+    new google.maps.Marker({
+      position: myLatLng,
+      map,
+      title: "Hello World!",
     });
   }
-  
   window.initMap = initMap;
+
+
+  const click = document.getElementById("clickItem");
+
+  click.addEventListener('onClick', function()
+  {
+    // alert('Click sucess');
+    // event.preventDefault(); 
+    click.innerHTML = "C'est cliqué !"            
+  }, true);
+
+
+  function recupLatLong() 
+  {
+    var latitude = document.getElementById('latitude');
+    var longitude = document.getElementById('longitude');
+
+    if( typeof(latitude) == int && typeof(longitude)==int)
+    {
+      alert(" Variables entiers /n Lat : "+latitude+" Long : "+longitude);
+    }
+    else{
+      lati,longi = parseInt(latitude) , parseInt(longitude);
+      alert(" Variables convertis entiers /n Lat : "+latitude+" Long : "+longitude);
+    }
+  }
+  window.recupLatLong = recupLatLong;

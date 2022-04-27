@@ -103,4 +103,14 @@ class DepartmentController extends AbstractController
 
         return $this->redirectToRoute('app_department_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    /**
+     * @Route("/Map/{id}", name="app_department_map", methods={"GET"})
+     */
+    public function searchMapOneDepartment()
+    {
+        return $this->render('accueil/home.html.twig', [
+            'controller_name' => 'DepartmentController',
+        ]);
+    }
 }
