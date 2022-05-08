@@ -25,9 +25,17 @@
                         </div>
                     </li>
                     
-                    <li class="nav-item item" role="presentation" data-bs-hover-animate="pulse">
-                        <a class="nav-link active" href="#">Contact</a>
+                    {% if app.user %}
+                     <li class="nav-item item" role="presentation" data-bs-hover-animate="pulse">
+                        <a class="nav-link active" href="{{ path('app_logout') }}"> Deconnexion </a>
                     </li>
+                    {% else %}
+                    <li class="nav-item item" role="presentation" data-bs-hover-animate="pulse">
+                        <a class="nav-link active" href="{{ path('app_login') }}"> Connexion </a>
+                    </li>
+                    {% endif %}
+                   
+
                 </ul>
             </div>
         </div>

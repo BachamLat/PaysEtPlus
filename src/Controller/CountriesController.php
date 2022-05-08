@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Countries;
+use App\Entity\Department;
 use App\Form\CountriesType;
 use App\Repository\CountriesRepository;
 use App\Repository\DepartmentRepository;
@@ -79,6 +80,13 @@ class CountriesController extends AbstractController
         
         // $departments = $countriesRepository->findAll( ['groups' => 'varVisible'] );
         // dd($departments);
+
+        // SELECT u FROM User u WHERE u.id = ? ORDER BY u.name ASC
+
+        // $em = $this->getDoctrine()->getManager();
+        // $query = $em->createQuery('SELECT distinct name.department FROM App\Entity\Department') ;
+        // $department = $query -> getResult() ;
+        // dd($department);
 
         return $this->render('countries/show.html.twig', [
             'countries' => $countries,

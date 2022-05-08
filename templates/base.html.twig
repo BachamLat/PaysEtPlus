@@ -47,6 +47,19 @@
                    margin-bottom: 10px;
                    text-align:center;
                 }
+                .alert{
+                    padding:1Opx;
+                    color: white;
+                    text-align : center;
+                }
+
+                .alert-success{
+                    background-color: green;
+                }
+
+                .alert-error{
+                    background-color: red;
+                }
             
             </style>
 
@@ -70,11 +83,15 @@
     <body>
 
         <div class="container"> 
+
                 {{ include('nav_bar/navbar.html.twig') }}
+
+                {{ include('nav_bar/flash_message.html.twig') }}
+
 
                 {% block body %} {% endblock %} 
 
-            {{ include('footer/footer.html.twig') }}
+                {{ include('footer/footer.html.twig') }}
         </div>
     
     </body>

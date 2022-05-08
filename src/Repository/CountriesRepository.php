@@ -67,14 +67,15 @@ class CountriesRepository extends ServiceEntityRepository
     }
 
     
-    // /**
-    //  * @return Countries[] Returns an array of Countries objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return Countries[] Returns an array of Countries objects
+     */
+    
+    public function allDepartmentsById($value)
     {
+        dd('Amir');
         return $this->createQueryBuilder('c')
-            ->andWhere('c.exampleField = :val')
+            ->andWhere('c.country_id = :val')
             ->setParameter('val', $value)
             ->orderBy('c.id', 'ASC')
             ->setMaxResults(10)
@@ -82,7 +83,7 @@ class CountriesRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?Countries
