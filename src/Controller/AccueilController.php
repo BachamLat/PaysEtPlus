@@ -12,10 +12,16 @@ use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 class AccueilController extends AbstractController
 {
     /**
-     * @Route("/home", name="app_accueil")
+     * @Route("/", name="app_accueil")
      */
     public function index(): Response
-    {
+    { 
+        // $this->denyAccessUnlessGranted('ROLE_USER');
+        // or use in  the route to add 
+        /*
+            @IsGranted("ROLE_USER") 
+         */
+
         return $this->render('accueil/home.html.twig', [
             'controller_name' => 'AccueilController',
             

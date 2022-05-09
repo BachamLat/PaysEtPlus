@@ -7,6 +7,7 @@ use App\Form\TownType;
 use App\Repository\TownRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
@@ -44,6 +45,7 @@ class TownController extends AbstractController
 
     /**
      * @Route("/new", name="app_town_new", methods={"GET", "POST"})
+     * @IsGranted("ROLE_USER")
      */
     public function new(Request $request, TownRepository $townRepository): Response
     {
@@ -74,6 +76,7 @@ class TownController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="app_town_edit", methods={"GET", "POST"})
+     * @IsGranted("ROLE_USER")
      */
     public function edit(Request $request, Town $town, TownRepository $townRepository): Response
     {
@@ -93,6 +96,7 @@ class TownController extends AbstractController
 
     /**
      * @Route("/{id}", name="app_town_delete", methods={"POST"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Town $town, TownRepository $townRepository): Response
     {

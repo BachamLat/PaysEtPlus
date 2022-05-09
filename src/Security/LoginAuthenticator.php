@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
 use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Authenticator\Passport\Passport;
+use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\UserBadge;
 use Symfony\Component\Security\Http\Authenticator\Passport\Badge\CsrfTokenBadge;
@@ -40,8 +41,6 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
 
         $user = $this->userRepository->findOneByEmail($email) ;
 
-        // dd($user);
-
         $request->getSession()->set('last_name_login_form', $request->request->get('email'));
 
         if(!$user){
@@ -63,8 +62,6 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             
-            $request->getSession()->getFlashBag()->add('error', 'Connexion non reussie !!');
-
             return new RedirectResponse($targetPath);
         }
 
@@ -73,6 +70,14 @@ class LoginAuthenticator extends AbstractLoginFormAuthenticator
         // For example:
         return new RedirectResponse($this->urlGenerator->generate('app_accueil'));
         // throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
+    }
+
+    // cette function peut ne pas exister
+    public function onAuthenticationFailure(Request $request, AuthenticationException $exception): Response
+    {
+        $request->getSession()->getFlashBag()->add('error', 'Connexion non reussie !!');
+        
+        return new RedirectResponse($this->urlGenerator->generate(self::LOGIN_ROUTE));
     }
 
     protected function getLoginUrl(Request $request): string
