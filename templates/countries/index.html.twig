@@ -30,7 +30,7 @@
                                     <td>{{ countries.longitude }}</td>
                                     <td>{{ countries.latitude }}</td>
                                     <td>
-                                        <a href="{{ path('app_countries_show', {'id': countries.id}) }}">  <i class="glyphicon glyphicon-eye-open">  </i> </a>
+                                        <a id="click" href="{{ path('app_countries_show', {'id': countries.id}) }}">  <i class="glyphicon glyphicon-eye-open">  </i> </a>
                                         <a href="{{ path('app_countries_edit', {'id': countries.id}) }}"> <i class="glyphicon glyphicon-pencil"> </i> </a>
                                     </td>
                                 </tr>

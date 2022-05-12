@@ -23,7 +23,7 @@
                 <td>{{ town.longitude }}</td>
                 <td>{{ town.latitude }}</td>
                 <td> 
-                    <a href="{{ path('app_town_show', {'id': town.id}) }}"><i class="glyphicon glyphicon-eye-open"> </i> </a>
+                    <a id="click" href="{{ path('app_town_show', {'id': town.id}) }}"><i class="glyphicon glyphicon-eye-open"> </i> </a>
                     <a href="{{ path('app_town_edit', {'id': town.id}) }}"><i class="glyphicon glyphicon-pencil"> </i> </a>
                 </td>
             </tr>

@@ -32,8 +32,8 @@
                             <th>Latitude</th>
                         </tr>
                         <tr>
-                            <td>{{ countries.longitude }}</td>
-                            <td>{{ countries.latitude }}</td>
+                            <td id="long">{{ countries.longitude }}</td>
+                            <td id="lat">{{ countries.latitude }}</td>
                         </tr>                 
                     </tbody>
                    
@@ -55,8 +55,14 @@
 
         </div>
 
-           
-            
-        
+        <div class="map-example">
+            <div class="row">
+                <div class="col-lg">
+
+                    <div id="map"> </div>
+                   
+                </div>
+            </div>
+        </div>
         
 {% endblock %}

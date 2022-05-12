@@ -19,6 +19,10 @@
         <link rel="stylesheet" href="{{ asset('css/css/Newsletter-Subscription-Form.css') }}">
         <link rel="stylesheet" href="{{ asset('css/css/styles.css') }}">
 
+        <!-- Style for Map -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/css/map-init.css') }}" /> 
+         
+
             <style>
                 {# voir style customize #}
 
@@ -78,6 +82,16 @@
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        
+        <!-- Map -->
+        <script src="{{ asset('css/js/map-init.js') }}"></script>
+
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGBK_yey9JlnTJwfjV85CQ4e7IIJlx7ms&callback=initMap&v=weekly"
+        defer
+        ></script>
         {% block javascripts %} {% endblock %}
     </head>
     <body>

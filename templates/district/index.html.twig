@@ -23,7 +23,7 @@
                 <td>{{ district.longitude }}</td>
                 <td>{{ district.latitude }}</td>
                 <td>
-                    <a href="{{ path('app_district_show', {'id': district.id}) }}"><i class="glyphicon glyphicon-eye-open">  </i> </a>
+                    <a id="click" href="{{ path('app_district_show', {'id': district.id}) }}"><i class="glyphicon glyphicon-eye-open">  </i> </a>
                     <a href="{{ path('app_district_edit', {'id': district.id}) }}"><i class="glyphicon glyphicon-pencil">  </i> </a>
                 </td>
             </tr>

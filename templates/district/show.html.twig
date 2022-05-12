@@ -23,8 +23,8 @@
                 <th>Latitude</th>
             </tr>
             <tr>
-                <td>{{ district.longitude }}</td>
-                <td>{{ district.latitude }}</td>
+                <td id="long">{{ district.longitude }}</td>
+                <td id="lat">{{ district.latitude }}</td>
             </tr>
         </tbody>
     </table>
@@ -41,6 +41,16 @@
 
                 {{ include('district/_delete_form.html.twig') }}
 
+        </div>
+
+        <div class="map-example">
+            <div class="row">
+                <div class="col-lg">
+
+                    <div id="map"> </div>
+                   
+                </div>
+            </div>
         </div>
 
 {% endblock %}

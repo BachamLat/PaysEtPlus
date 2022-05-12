@@ -29,9 +29,9 @@
                 <td>{{ department.latitude }}</td>
                 <td>                                    
 
-                    <a href="{{ path('app_department_show', {'id': department.id}) }}"><i class="glyphicon glyphicon-eye-open">  </i> </a>
+                    <a id="click" href="{{ path('app_department_show', {'id': department.id}) }}"><i class="glyphicon glyphicon-eye-open">  </i> </a>
                     <a href="{{ path('app_department_edit', {'id': department.id}) }}"><i class="glyphicon glyphicon-pencil">  </i> </a>
-                    <a id="clickItem" href="{{ path('app_department_map', {'id': department.id}) }}"><i class="glyphicon glyphicon-search">  </i> </a>
+                    {# <a id="clickItem" href="{{ path('app_department_map', {'id': department.id}) }}"><i class="glyphicon glyphicon-search">  </i> </a> #}
 
                 </td>
             </tr>

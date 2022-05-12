@@ -19,12 +19,12 @@
             <tr>  <td colspan="2"> </td>  </tr>
 
             <tr>
-                <th>Longitude</th>
-                <th>Latitude</th>
+                <th >Longitude</th>
+                <th >Latitude</th>
             </tr>
             <tr>
-                <td>{{ municipality.longitude }}</td>
-                <td>{{ municipality.latitude }}</td>
+                <td id="long">{{ municipality.longitude }}</td>
+                <td id="lat">{{ municipality.latitude }}</td>
             </tr>
         </tbody>
     </table>
@@ -45,7 +45,14 @@
 
     </div>
 
-    
+    <div class="map-example">
+            <div class="row">
+                <div class="col-lg">
 
+                    <div id="map"> </div>
+                   
+                </div>
+            </div>
+        </div>
 
 {% endblock %}
