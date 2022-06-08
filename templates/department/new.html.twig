@@ -3,6 +3,7 @@
 {% block title %}Nouveau Department{% endblock %}
 
 {% block body %}
+<div class="container">
     <h1>Enregistrer un nouveau Department</h1>
 
     {{ include('department/_form.html.twig') }}
@@ -12,5 +13,5 @@
             <a class="btn btn-info" href="{{ path('app_department_index') }}" role="button"> Retour à la liste </a>  <br> <br>    
         </div>
     </div>
-    
+</div>  
 {% endblock %}

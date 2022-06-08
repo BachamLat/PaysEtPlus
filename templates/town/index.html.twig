@@ -36,25 +36,25 @@
     </table>
 
       {% if maxPages > 1 %}
-       <div class="center">
-           <ul class="pagination pagination-sm ">
-            {# `«` arrow  #}
-            <li {{ thisPage == 1 ? 'class="disabled"' }}>
-                <a href="{{ path('app_town_index', {currentPage: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
-            </li>
+       <div class="container">
+                <ul class="pagination pagination-sm justify-content-center">
+                {# `«` arrow  #}
+                    <li {{ thisPage == 1 ? 'class="disabled"' }}>
+                        <a href="{{ path('app_town_index', {currentPage: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
+                    </li>
 
-            {# Render each page number #}
-            {% for i in 1..maxPages %}
-            <li {{ thisPage == i ? 'class="active"' }}>
-            <a href="{{ path('app_town_index', {currentPage: i}) }}">{{ i }}</a>
-            </li>
-            {% endfor %}
+                    {# Render each page number #}
+                    {% for i in 1..maxPages %}
+                    <li {{ thisPage == i ? 'class="active"' }}>
+                    <a href="{{ path('app_town_index', {currentPage: i}) }}">{{ i }}</a>
+                    </li>
+                    {% endfor %}
 
-            {# `»` arrow #}
-            <li {{ thisPage == maxPages ? 'class="disabled"' }}>
-                <a href="{{ path('app_town_index', {currentPage: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>
-            </li>
-        </ul>
+                    {# `»` arrow #}
+                    <li {{ thisPage == maxPages ? 'class="disabled"' }}>
+                        <a href="{{ path('app_town_index', {currentPage: thisPage+1 <= maxPages ? thisPage+1 : thisPage}) }}">»</a>
+                    </li>
+                </ul>
        </div>
     {% endif %}
 

@@ -27,7 +27,7 @@ class TownController extends AbstractController
             $currentPage=intVal($_GET["currentPage"]);
         }
         $thisPage = $currentPage;
-        $limit = 100;
+        $limit = 180;
         $paginator= $townRepository->getAllTowns($currentPage,$limit);
        
         $maxPages = ceil($paginator->count() / $limit);

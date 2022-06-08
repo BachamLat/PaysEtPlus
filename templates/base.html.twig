@@ -79,8 +79,9 @@
         <script src="{{ asset('css/js/bs-init.js') }} "></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
         <script src="{{ asset('css/js/aos.js') }}"></script>
-
-        <!-- Latest compiled and minified JavaScript -->
+       
+        <!-- Script insered for to all script on code.jquery.com -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        <!-- Latest compiled and minified JavaScript -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
         
         <!-- Map -->
@@ -94,13 +95,15 @@
         ></script>
         {% block javascripts %} {% endblock %}
     </head>
-    <body>
+    <body id="pageTop">
 
-        <div class="container"> 
+        <div > 
 
                 {{ include('nav_bar/navbar.html.twig') }}
 
                 {{ include('nav_bar/flash_message.html.twig') }}
+
+                <div class="container p-4"> </div>
 
 
                 {% block body %} {% endblock %} 

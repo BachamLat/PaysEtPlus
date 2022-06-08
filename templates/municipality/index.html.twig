@@ -37,8 +37,8 @@
 
 
     {% if maxPages > 1 %}
-       <div class="center">
-           <ul class="pagination pagination-sm">
+       <div class="container">
+           <ul class="pagination pagination-sm justify-content-center">
             {# `«` arrow  #}
             <li {{ thisPage == 1 ? 'class="disabled"' }}>
                 <a href="{{ path('app_municipality_index', {currentPage: thisPage-1 < 1 ? 1 : thisPage-1}) }}">«</a>
