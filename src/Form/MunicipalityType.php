@@ -32,7 +32,12 @@ class MunicipalityType extends AbstractType
                     'class' => 'form-control'
                 ]
             ])
-            ->add('department')
+            ->add('department',null,[
+                'label'=> false,
+                'attr'=> [
+                    'class' => 'form-control'
+                ]  
+            ])
         ;
     }
 

@@ -44,7 +44,6 @@ class CountriesController extends AbstractController
             'thisPage' => $thisPage,
             'maxPages' => $maxPages,
             'currentPage' => $currentPage ,
-            
         ]);
     }
 
